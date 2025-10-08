@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,7 +30,7 @@ namespace ObserverPattern
         /// <summary>
         /// Level up delegate.
         /// </summary>
-        public delegate void LevelUpDelegate();
+        public delegate void LevelUpDelegate(int newLevel);
         
         /// <summary>
         /// Level up event.
@@ -76,12 +77,10 @@ namespace ObserverPattern
             ExperiencePoints += amount;
 
             // In a full implementation, this is where you'd notify observers (e.g., OnLevelUp event)
-            
-            if (CurrentLevel > previousLevel)
-            {
-                _onLevelUp?.Invoke();
-                OnLevelUp?.Invoke();
-            }
+
+            if (CurrentLevel <= previousLevel) return;
+            _onLevelUp?.Invoke();
+            OnLevelUp?.Invoke(CurrentLevel);
         }
     }
 }

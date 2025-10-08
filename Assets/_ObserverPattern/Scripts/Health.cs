@@ -61,7 +61,7 @@ namespace ObserverPattern
         }
 
         /// <summary>
-        /// 
+        /// Ensures that the Level component is not null before unsubscribing from its event.
         /// </summary>
         private void OnDisable()
         {
@@ -73,7 +73,7 @@ namespace ObserverPattern
         /// Resets the current health to maximum value.
         /// Typically called when a level-up event occurs.
         /// </summary>
-        public void ResetHealth()
+        public void ResetHealth(int newLevel = 0)
         {
             CurrentHealth = _maxHealth;
         }
