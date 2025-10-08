@@ -67,7 +67,6 @@ Assets/_ObserverPattern/
 ### 🧠 Notes for Readers / Developers
 
 * This setup is **for demonstrating the Observer Pattern concept only.**
-* No actual events are wired yet — that’s handled in later implementations (e.g., using `C# events`).
 
 ---
 

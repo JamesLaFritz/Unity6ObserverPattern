@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,12 @@ namespace ObserverPattern
     /// </summary>
     public class Health : MonoBehaviour
     {
+        /// <summary>
+        /// The Level component that will trigger a level-up event.
+        /// </summary>
+        [Tooltip("The Level component that will trigger a level-up event.")]
+        [SerializeField] private Level _level;
+        
         /// <summary>
         /// The maximum health of the character.
         /// </summary>
@@ -42,6 +49,24 @@ namespace ObserverPattern
         {
             ResetHealth();
             StartCoroutine(HealthDrain());
+        }
+
+        /// <summary>
+        /// Ensures that the Level component is not null before subscribing to its event.
+        /// </summary>
+        private void OnEnable()
+        {
+            if (_level == null) return;
+            _level.OnLevelUp += ResetHealth;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void OnDisable()
+        {
+            if (_level == null) return;
+            _level.OnLevelUp -= ResetHealth;
         }
 
         /// <summary>

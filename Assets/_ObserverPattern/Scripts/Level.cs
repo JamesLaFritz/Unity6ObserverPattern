@@ -25,6 +25,16 @@ namespace ObserverPattern
         /// Unity event that is invoked when the character levels up.
         /// </summary>
         [SerializeField] private UnityEvent _onLevelUp;
+        
+        /// <summary>
+        /// Level up delegate.
+        /// </summary>
+        public delegate void LevelUpDelegate();
+        
+        /// <summary>
+        /// Level up event.
+        /// </summary>
+        public event LevelUpDelegate OnLevelUp;
 
         /// <summary>
         /// The current total experience points accumulated by the character.
@@ -56,7 +66,7 @@ namespace ObserverPattern
         }
 
         /// <summary>
-        /// Adds the specified amount of experience points to the character.
+        /// Adds the specified number of experience points to the character.
         /// </summary>
         /// <param name="amount">The number of experience points to add.</param>
         private void GainExperience(int amount)
@@ -68,7 +78,10 @@ namespace ObserverPattern
             // In a full implementation, this is where you'd notify observers (e.g., OnLevelUp event)
             
             if (CurrentLevel > previousLevel)
-                _onLevelUp.Invoke();
+            {
+                _onLevelUp?.Invoke();
+                OnLevelUp?.Invoke();
+            }
         }
     }
 }
