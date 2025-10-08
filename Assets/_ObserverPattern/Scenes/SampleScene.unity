@@ -5250,6 +5250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237a54b178a44ffc9a953dbc7dab12d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObserverPattern.Health
+  _level: {fileID: 453635912}
   _maxHealth: 100
   _drainPerSecond: 2
 --- !u!4 &453635910
@@ -5299,18 +5300,6 @@ MonoBehaviour:
       - m_Target: {fileID: 259461636}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 453635909}
-        m_TargetAssemblyTypeName: ObserverPattern.Health, Assembly-CSharp
-        m_MethodName: ResetHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

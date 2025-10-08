@@ -28,14 +28,12 @@ namespace ObserverPattern
         [SerializeField] private UnityEvent _onLevelUp;
         
         /// <summary>
-        /// Level up delegate.
+        /// Level Up as an Action instead of Delegate/Event.
         /// </summary>
-        public delegate void LevelUpDelegate(int newLevel);
-        
-        /// <summary>
-        /// Level up event.
-        /// </summary>
-        public event LevelUpDelegate OnLevelUp;
+        public Action<int> OnLevelUp;
+
+        //public delegate void LevelUpDelegate(int newLevel);
+        //public event LevelUpDelegate OnLevelUp;
 
         /// <summary>
         /// The current total experience points accumulated by the character.
