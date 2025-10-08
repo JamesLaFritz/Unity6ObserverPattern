@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ObserverPattern
 {
@@ -19,6 +20,11 @@ namespace ObserverPattern
         /// </summary>
         [Tooltip("The number of experience points required to reach the next level.")]
         [SerializeField] private int _pointsToLevelUp = 100;
+        
+        /// <summary>
+        /// Unity event that is invoked when the character levels up.
+        /// </summary>
+        [SerializeField] private UnityEvent _onLevelUp;
 
         /// <summary>
         /// The current total experience points accumulated by the character.
@@ -55,9 +61,14 @@ namespace ObserverPattern
         /// <param name="amount">The number of experience points to add.</param>
         private void GainExperience(int amount)
         {
+            var previousLevel = CurrentLevel;
+
             ExperiencePoints += amount;
 
             // In a full implementation, this is where you'd notify observers (e.g., OnLevelUp event)
+            
+            if (CurrentLevel > previousLevel)
+                _onLevelUp.Invoke();
         }
     }
 }

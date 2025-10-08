@@ -67,9 +67,7 @@ Assets/_ObserverPattern/
 ### 🧠 Notes for Readers / Developers
 
 * This setup is **for demonstrating the Observer Pattern concept only.**
-* No actual events or UnityEvents are wired yet — that’s handled in later implementations (e.g., using `UnityEvent` or `C# events`).
-* The goal is to **show the initial state** before adding the observer logic.
-* Each component is independent — meaning they can evolve into **publishers or subscribers** when the event system is introduced.
+* No actual events are wired yet — that’s handled in later implementations (e.g., using `C# events`).
 
 ---
 
