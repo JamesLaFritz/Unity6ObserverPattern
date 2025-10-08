@@ -75,7 +75,7 @@ Assets/_ObserverPattern/
 
 ### 🔗 Related Resources
 
-* 🧩 [Medium Article: *The Observer Pattern in Unity*](https://medium.com/@ktmarine1999)
+* 🧩 [Medium Article: *The Observer Pattern in Unity*](https://medium.com/@ktmarine1999/938d2a274baf) //ToDo: Update Link Once Published to Medium.
 * 💡 [Unity Documentation: UnityEvent](https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html)
 * 🧠 [Microsoft Docs: Delegates and Events](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/)
 
